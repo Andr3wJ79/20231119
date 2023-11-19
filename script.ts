@@ -28,16 +28,15 @@ interface auto{
     benzinesE : boolean;
 }
 
-function legkisebbHengerurtartalom(autok:auto[]):number{
-    var eredmeny:number = 0;
-    var aktualis:number = autok[0].hengerurtartalom;
+function legkisebbHengerurtartalom(autok:auto[]):auto{
+    var minAuto:auto = autok[0];
 
     for(var i:number = 1; i < autok.length; i++){
-        if (aktualis > autok[i].hengerurtartalom){
-            eredmeny = i;
+        if (minAuto.hengerurtartalom > autok[i].hengerurtartalom){
+            minAuto = autok[i];
         }
     }
-    return eredmeny;
+    return minAuto;
 }
 
 var a1:auto = {gyarto:"Opel", tipus:"Astra", hengerurtartalom:1400, benzinesE:true};

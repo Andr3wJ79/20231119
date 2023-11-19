@@ -17,14 +17,13 @@ function korKT(sugar) {
 }
 console.log(korKT(12));
 function legkisebbHengerurtartalom(autok) {
-    var eredmeny = 0;
-    var aktualis = autok[0].hengerurtartalom;
+    var minAuto = autok[0];
     for (var i = 1; i < autok.length; i++) {
-        if (aktualis > autok[i].hengerurtartalom) {
-            eredmeny = i;
+        if (minAuto.hengerurtartalom > autok[i].hengerurtartalom) {
+            minAuto = autok[i];
         }
     }
-    return eredmeny;
+    return minAuto;
 }
 var a1 = { gyarto: "Opel", tipus: "Astra", hengerurtartalom: 1400, benzinesE: true };
 var a2 = { gyarto: "Opel", tipus: "Combo", hengerurtartalom: 1399, benzinesE: false };
@@ -35,7 +34,7 @@ function benzinesEDarab(autok) {
     var eredmeny = 0;
     for (var i = 0; i < autok.length; i++) {
         if (autok[i].benzinesE) {
-            eredmeny += 1;
+            eredmeny++;
         }
     }
     return eredmeny;
