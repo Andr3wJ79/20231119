@@ -51,7 +51,7 @@ function benzinesEDarab(autok:auto[]):number{
 
     for(var i:number = 0; i < autok.length; i++){
         if (autok[i].benzinesE){
-            eredmeny += 1;
+            eredmeny++;
         }
     }
     return eredmeny;
